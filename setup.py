@@ -4,8 +4,8 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="django-secret-key-generator-PickBas",
-    version="0.0.1",
+    name="secret-key-generator-PickBas",
+    version="0.0.4",
     author="Kirill Sayed",
     author_email="sayed.kirill@gmail.com",
     description="Package for secret key generation in Django framework.",
