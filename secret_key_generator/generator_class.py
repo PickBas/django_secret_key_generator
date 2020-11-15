@@ -3,22 +3,20 @@
 from random import SystemRandom
 import os
 
-DEFAULT_CHARS = "abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)"
-DEFAULT_FILE_PATH = ".secret.txt"
-DEFAULT_LENGTH_OF_SECRET_KEY = 50
+from secret_key_generator import properties
 
 
 class SecretKeyGenerator:
     """SecretKeyGenerator class"""
 
     def __init__(self,
-                 chars=DEFAULT_CHARS,
-                 file_path=DEFAULT_FILE_PATH,
-                 len_of_secret_key=DEFAULT_LENGTH_OF_SECRET_KEY):
+                 chars=properties.DEFAULT_CHARS,
+                 file_name=properties.DEFAULT_FILE_NAME,
+                 len_of_secret_key=properties.DEFAULT_LENGTH_OF_SECRET_KEY):
         self._chars = chars
         self._secret_key = ""
         self._len_of_secret_key = len_of_secret_key
-        self._file_path = file_path
+        self._file_name = file_name
         self._system_random = SystemRandom()
 
     def _get_random_string(self):
@@ -38,7 +36,7 @@ class SecretKeyGenerator:
             secret_key: str
         """
 
-        secret_key_file = open(self._file_path, 'r')
+        secret_key_file = open(self._file_name, 'r')
         secret_key = secret_key_file.readline()
         secret_key_file.close()
         return secret_key
@@ -55,13 +53,13 @@ class SecretKeyGenerator:
         """
 
         if len(secret_key_to_validate) != self._len_of_secret_key:
-            os.remove(self._file_path)
+            os.remove(self._file_name)
             raise ValueError
 
     def _write_secret_key_to_file(self):
         """Writing the secret key to file"""
 
-        secret_key_file = open(self._file_path, 'x')
+        secret_key_file = open(self._file_name, 'x')
         secret_key_file.write(self._secret_key)
         secret_key_file.close()
 
