@@ -1,5 +1,5 @@
 """secret_key_generator.py file"""
-from generator_class import SecretKeyGenerator
+from .generator_class import SecretKeyGenerator
 
 
 def generate() -> str:
