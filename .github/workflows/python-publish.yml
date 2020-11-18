@@ -26,7 +26,7 @@ jobs:
       env:
         TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
         TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
-        RELEASE_NAME: ${{ env.RELEASE_NAME }}
+        RELEASE_NAME: ${{ env.RELEASE_TAG }}
       run: |
         python setup.py sdist bdist_wheel
         twine upload dist/*
