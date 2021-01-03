@@ -20,11 +20,11 @@ In your settings.py file:
                                                file_name=your_filename,
                                                len_of_secret_key=your_length)
                                                
-From **chars** variable the library generates secret key.
+With **chars** variable the library generates secret key.
 
 **file_name** is used to name a file that is going to contain the secret key.
 
-**len_of_secret_key** sets length of secret key
+**len_of_secret_key** is used to set length of secret key
                                                
 #### Defaults
     chars: abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)
