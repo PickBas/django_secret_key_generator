@@ -53,7 +53,9 @@ class SecretKeyGenerator:
         """
 
         if len(secret_key_to_validate) != self._len_of_secret_key:
-            os.remove(self._file_name)
+            secret_key_file = open(self._file_name, 'w')
+            secret_key_file.write("")
+            secret_key_file.close()
             raise ValueError
 
     def _write_secret_key_to_file(self):
