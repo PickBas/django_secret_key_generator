@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="secret-key-generator",
-    version="0.0.7",
+    version="0.0.8",
     author="Kirill Sayed",
     author_email="sayed.kirill@gmail.com",
     description="Package for secret key generation in Django framework.",
