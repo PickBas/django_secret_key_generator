@@ -61,7 +61,7 @@ class SecretKeyGenerator:
     def _write_secret_key_to_file(self):
         """Writing the secret key to file"""
 
-        secret_key_file = open(self._file_name, 'x')
+        secret_key_file = open(self._file_name, 'w')
         secret_key_file.write(self._secret_key)
         secret_key_file.close()
 
